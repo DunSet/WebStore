@@ -24,6 +24,7 @@ namespace WebStore
                
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews(); //добавление инфраструктуры MVC
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -33,15 +34,24 @@ namespace WebStore
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles(); //для работы с static файлами
+            app.UseDefaultFiles(); //для работы с какими-то еще файлами)
+
             app.UseRouting();
 
                    
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+                endpoints.MapGet("/greetings", async context =>
                 {
                     await context.Response.WriteAsync(Configuration["CustomGreetings"]);
                 });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{cotroller}/{action=Index}/{id?}" //controller отоджествляется с имене м контроллера, дейсвие над контроллером и параметр для передачи в контроллер
+                    //Id '?' - параметр опционален (не обязателен), Index - по умолчанию без указания будет сюда
+                    //Home - если не указан точный контроллер, то по умолчанию Homme
+                    );
             });
         }
     }
