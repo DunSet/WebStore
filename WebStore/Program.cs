@@ -11,15 +11,15 @@ namespace WebStore
 {
     public class Program
     {
-        public static void Main(string[] args) =>  
+
+        public static void Main(string[] args) =>
             CreateHostBuilder(args)
-            .Build()
-            .Run();
-        
+               .Build()
+               .Run();
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration(opt => opt.AddIniFile("config.ini", optional: true, reloadOnChange: true)) //добавление ini файла
+               .ConfigureAppConfiguration(opt => opt.AddIniFile("config.ini", optional: true, reloadOnChange: true))
                 .ConfigureWebHostDefaults(host =>
                 {
                     host.UseStartup<Startup>();
