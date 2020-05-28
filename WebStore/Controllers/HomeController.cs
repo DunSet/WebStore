@@ -36,14 +36,9 @@ namespace WebStore.Controllers
                 Age = 45
             },
         };
-       
-        public IActionResult Index()
-        {
 
-            //ViewBag.Info = "Hello world";
-            ViewData["Title"] = "Hello world!";
-            return View(__Employees);
-        }
+        public IActionResult Index() => View();
+       
 
         public IActionResult EmployeeDetails(int id)
         {
