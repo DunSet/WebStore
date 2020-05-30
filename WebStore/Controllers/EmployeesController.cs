@@ -15,8 +15,8 @@ namespace WebStore.Controllers
             {
                 Id = 1,
                 Surname = "Родионова",
-                FirstName = "Алена",
-                Patronimic = "Витальевна",
+                FirstName = "Алёна",
+                Patronimic = "Валерьевна",
                 Age = 21
             },
              new Employee
@@ -36,10 +36,8 @@ namespace WebStore.Controllers
                 Age = 45
             },
         };
-        public IActionResult Index()
-        {
-            return View(__Employees);
-        }
+        public IActionResult Index() => View(__Employees);
+      
 
         public IActionResult EmployeeDetails(int id)
         {
