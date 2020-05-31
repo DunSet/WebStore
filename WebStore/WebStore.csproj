@@ -17,7 +17,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Views\Blog\Partial\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
   
