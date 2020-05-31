@@ -8,9 +8,11 @@ namespace WebStore.Controllers
 {
     public class ShopController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public IActionResult Index() => View();
+        public IActionResult Cart() => View();
+        public IActionResult Checkout() => View();
+        public IActionResult Login() => View();
+        public IActionResult ProductDetails() => View();
+             
     }
 }
