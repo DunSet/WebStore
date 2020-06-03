@@ -46,19 +46,18 @@ namespace WebStore
 
             app.UseWelcomePage("/MVC");
 
-            app.Use(async (context, next) =>
+           /* app.Use(async (context, next) =>
             {
                 Debug.WriteLine($"Request to, {context.Request.Path}");
                 await next();
-            });
+            });*/
             //app.UseMiddleware<>();
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-               
-                endpoints.MapControllerRoute(
+                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                     );

@@ -7,6 +7,7 @@ using WebStore.Models;
 
 namespace WebStore.Controllers
 {
+    [Route("Staff")]
     public class EmployeesController : Controller
     {
         private static readonly List<Employee> __Employees = new List<Employee>
@@ -36,9 +37,11 @@ namespace WebStore.Controllers
                 Age = 45
             },
         };
+
+        [Route("List")]
         public IActionResult Index() => View(__Employees);
       
-
+        [Route("{id}")]
         public IActionResult EmployeeDetails(int id)
         {
             var employee = __Employees.FirstOrDefault(e => e.Id == id);
