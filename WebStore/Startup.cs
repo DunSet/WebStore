@@ -24,10 +24,15 @@ namespace WebStore
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddControllersWithViews(opt => 
+            {
+                //opt.Filters.Add<>();
+                //opt.Conventions //соглашения
+                //opt.Conventions.Add();
+             }).AddRazorRuntimeCompilation();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) //формирует конвеер обработки входящ запросов
         {
             if (env.IsDevelopment())
             {
