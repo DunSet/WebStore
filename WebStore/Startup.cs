@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -36,12 +37,21 @@ namespace WebStore
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+                app.UseDeveloperExceptionPage();//обработчик ошибок
+                app.UseBrowserLink();//открывает порт и слушает его
             }
 
-            app.UseStaticFiles();
+            app.UseStaticFiles();//загрузка картинок
             app.UseDefaultFiles();
+
+            app.UseWelcomePage("/MVC");
+
+            app.Use(async (context, next) =>
+            {
+                Debug.WriteLine($"Request to, {context.Request.Path}");
+                await next();
+            });
+            //app.UseMiddleware<>();
 
             app.UseRouting();
 
