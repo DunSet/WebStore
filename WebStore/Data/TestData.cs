@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using WebStore.Models;
 
 namespace WebStore.Data
 {
     public static class TestData
     {
-        public static List<Employee> Employees {get} =   new List<Employee>
+        public static List<Employee> _employees = new List<Employee>
         {
             new Employee
             {
@@ -18,7 +15,7 @@ namespace WebStore.Data
                 Patronimic = "Валерьевна",
                 Age = 21
             },
-             new Employee
+            new Employee
             {
                 Id = 2,
                 Surname = "Фельчер",
@@ -26,7 +23,7 @@ namespace WebStore.Data
                 Patronimic = "Петрович",
                 Age = 26
             },
-              new Employee
+            new Employee
             {
                 Id = 3,
                 Surname = "Незабудка",
@@ -35,5 +32,7 @@ namespace WebStore.Data
                 Age = 45
             },
         };
+
+        public static List<Employee> Employees => _employees;
     }
 }
