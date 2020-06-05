@@ -5,7 +5,7 @@ namespace WebStore.Data
 {
     public static class TestData
     {
-        public static List<Employee> _employees = new List<Employee>
+        public static List<Employee> Employees => new List<Employee>
         {
             new Employee
             {
@@ -33,6 +33,6 @@ namespace WebStore.Data
             },
         };
 
-        public static List<Employee> Employees => _employees;
+        public static int ConnectionString(int x, int y) => x + y;
     }
 }
