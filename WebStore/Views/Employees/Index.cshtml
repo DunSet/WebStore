@@ -32,12 +32,11 @@
                 @*<td><a href="@Url.Action("EmployeeDetails", "Employees")>Инфа*@
                 @*"{controller=Home}/{action=Index}/{id?}"*@
             <td>
-                <a asp-controller="Employees" asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-success">
-                    <i class="=fa fa-edit"></i>
+                <a asp-controller="Employees" asp-action="Edit" asp-route-id="@employee.Id" class="fa fa-pencil">
                 </a>
 
-                <a asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.Id" class="btn btn-danger">
-                    <i class="=fa fa-trash-o"></i>
+                <a asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.Id" class="fa fa-trash-o">
+               
                 </a>
             </td>
 
